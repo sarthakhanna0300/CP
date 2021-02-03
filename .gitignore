@@ -11,4 +11,5 @@ CMakeLists.txt
 main.cpp
 Format
 Template
-
+.idea
+.gitignore
