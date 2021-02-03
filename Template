@@ -141,14 +141,6 @@ void SieveOfEratosthenes(ll n)
 int main() {
     NeedForSpeed;
     T_ {
-        string s;
-        cin >> s;
-        ll last = -1, ans = 0,i;
-        for (i = 0; i < s.size(); i++) {
-            if (s[i] == 'L') ans = max(ans, i - last);
-            else last = i;
-        }
-        cout << ans + 1 << "\n";
     }
     return 0;
 }

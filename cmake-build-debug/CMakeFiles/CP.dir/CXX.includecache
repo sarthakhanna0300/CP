@@ -7,6 +7,6 @@
 #IncludeRegexTransform: 
 
 E:/CP/main.cpp
-iostream
+bits/stdc++.h
 -
 
