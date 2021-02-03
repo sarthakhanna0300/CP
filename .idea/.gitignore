@@ -6,9 +6,9 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests
-/cmake-build-debug
-/CMakeLists
-/main
-/Format
-/Template
+cmake-build-debug
+CMakeLists
+main
+Format
+Template
 
