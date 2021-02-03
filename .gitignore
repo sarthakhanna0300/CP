@@ -1,5 +1,6 @@
 # Default ignored files
 /shelf/
+.idea/
 /workspace.xml
 # Datasource local storage ignored files
 /dataSources/
@@ -11,4 +12,3 @@ CMakeLists.txt
 main.cpp
 Format
 Template
-.idea
