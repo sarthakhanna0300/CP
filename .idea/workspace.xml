@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="CP" targetName="CP" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d9099712-7969-4e6f-9763-c7470c4c85bd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/main.cpp" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectId" id="1nysyp0fHPVhDmSfBxhGT5wEh7Z" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.first.check.clang-format" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CP" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="CP" TARGET_NAME="CP" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="CP" RUN_TARGET_NAME="CP">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d9099712-7969-4e6f-9763-c7470c4c85bd" name="Default Changelist" comment="" />
+      <created>1612373921122</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612373921122</updated>
+      <workItem from="1612373923010" duration="11416000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="267" y="19" key="#Inspections" timestamp="1612374833861">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="267" y="19" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1612374833861" />
+    <state x="340" y="131" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1612459078531">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="340" y="131" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1612459078531" />
+    <state width="406" height="533" key="GridCell.Tab.0.bottom" timestamp="1612459186507">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="406" height="533" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1612459186507" />
+    <state width="406" height="533" key="GridCell.Tab.0.center" timestamp="1612459186507">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="406" height="533" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1612459186507" />
+    <state width="406" height="533" key="GridCell.Tab.0.left" timestamp="1612459186507">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="406" height="533" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1612459186507" />
+    <state width="406" height="533" key="GridCell.Tab.0.right" timestamp="1612459186507">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="406" height="533" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1612459186507" />
+    <state x="221" y="76" key="IDE.errors.dialog" timestamp="1612380461424">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="221" y="76" key="IDE.errors.dialog/0.0.1280.680@0.0.1280.680" timestamp="1612380461424" />
+  </component>
+</project>
