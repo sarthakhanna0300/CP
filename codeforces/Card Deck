@@ -1,5 +1,5 @@
 Question Link:
-https://codeforces.com/contest/1492/problem/A
+https://codeforces.com/contest/1492/problem/B
 
 Code:
 #include<bits/stdc++.h>
@@ -35,13 +35,32 @@ using namespace std;
 int main() {
     NeedForSpeed;
     T_ {
-            ll p, a, b, c;
-            cin >> p >> a >> b >> c;
-            if (min(p % a, min(p % b,p % c)) == 0) {
-                cout << "0\n";
-            } else {
-                cout << min(a - p % a, min(b - p % b, c - p % c)) << "\n";
-            }
+        ll n, i;
+        cin >> n;
+        ll a[n + 1];
+        vector<pair<ll, ll>> v;
+        for (i = 0; i < n; i++) {
+            ll x;
+            cin >> x;
+            a[i] = x;
+            v.pb({x, i});
         }
+        sort(all(v), greater<pair<ll, ll>>());
+        ll ind = n;
+        i = v[0].ss;
+        ll in = 0;
+        while (ind != 0) {
+            ll j;
+            for (j = i; j < ind; j++) {
+                cout << a[j] << " ";
+            }
+            ind = i;
+            while (ind <= v[in].ss && in<n) {
+                in++;
+            }
+            i = v[in].ss;
+        }
+        cout << "\n";
+    }
     return 0;
 }
