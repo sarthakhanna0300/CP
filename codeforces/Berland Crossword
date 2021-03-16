@@ -1,0 +1,69 @@
+Question Link:
+https://codeforces.com/contest/1494/problem/B
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+int main() {
+    NeedForSpeed;
+    T_ {
+        ll n, u, r, d, l, f = 1;
+        cin >> n >> u >> r >> d >> l;
+        for (ll mask = 0; mask < 16; mask++) {
+            ll U = u, R = r, D = d, L = l;
+            if (mask & 1) {
+                U -= 1;
+                L -= 1;
+            }
+            if (mask & 2) {
+                L -= 1;
+                D -= 1;
+            }
+            if (mask & 4) {
+                D -= 1;
+                R -= 1;
+            }
+            if (mask & 8) {
+                R -= 1;
+                U -= 1;
+            }
+            if (min(min(U, R), min(D, L)) >= 0 and max(max(U, R), max(D, L)) <= n - 2) {
+                cout << "YES\n";
+                f = 0;
+                break;
+            }
+        }
+        if (f) {
+            cout << "NO\n";
+        }
+    }
+    return 0;
+}
