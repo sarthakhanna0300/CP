@@ -1,0 +1,107 @@
+Question Link:
+https://codeforces.com/contest/1484/problem/C
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define fr(i, a, b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+int main() {
+    NeedForSpeed;
+    T_ {
+        ll n, m, i;
+        cin >> n >> m;
+        vector<vector<ll>> v(n + 1), v1(m);
+        vector<pair<ll, ll>> vec;
+        vector<map<ll, ll>> ma(m);
+        for (i = 0; i < m; i++) {
+            ll k;
+            cin >> k;
+            vec.pb({k, i});
+            for (ll j = 0; j < k; j++) {
+                ll x;
+                cin >> x;
+                v1[i].pb(x);
+                v[x].pb(i);
+                ma[i][x] = 1;
+            }
+        }
+        sort(all(vec));
+        ll mx = 0;
+        ll ind = 0;
+        for (i = 1; i <= n; i++) {
+            if (!v[i].empty()) {
+                if (mx < v[i].size()) {
+                    mx = v[i].size();
+                    ind = i;
+                }
+            }
+        }
+        ll f = 0;
+        vector<ll> ans(m, -1);
+        if (mx > (m + 1) / 2) {
+            ll j = 0;
+            for (i = 0; i < vec.size() && j < (m + 1) / 2; i++) {
+                if (ma[vec[i].second][ind] == 1) {
+                    ans[vec[i].second] = ind;
+                    j++;
+                }
+            }
+            for (i = 0; i < m; i++) {
+                if (ans[i] == -1) {
+                    if (v1[i].size() == 1 && v1[i][0] == ind) {
+                        f = 1;
+                        break;
+                    } else {
+                        if (v1[i][0] != ind) {
+                            ans[i] = v1[i][0];
+                        } else {
+                            ans[i] = v1[i][1];
+                        }
+                    }
+                }
+            }
+        } else {
+            for (i = 0; i < m; i++) {
+                ans[i] = v1[i][0];
+            }
+        }
+        if (f) {
+            cout << "NO\n";
+            continue;
+        }
+        cout << "YES\n";
+        for (i = 0; i < m; i++) {
+            cout << ans[i] << " ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
