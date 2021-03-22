@@ -1,0 +1,87 @@
+Question Link:
+https://codeforces.com/contest/1497/problem/E1
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define fr(i, a, b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+const int N = 1e7 + 10;
+
+vector<int> prime(N);
+
+void pre() {
+    prime[1] = 1;
+    for (int i = 2; i < N; i++) {
+        if (prime[i] == 0) {
+            for (int j = i; j < N; j += i) {
+                prime[j] = i;
+            }
+        }
+    }
+}
+int main() {
+    NeedForSpeed;
+    pre();
+    T_ {
+        ll n, k, i;
+        cin >> n >> k;
+        ll a[n + 1];
+        ll val[n + 1];
+        for (i = 0; i < n; i++) {
+            cin >> a[i];
+            ll y = 1;
+            map<ll, ll> temp;
+            while (a[i] > 1) {
+                ll x = prime[a[i]];
+                temp[x]++;
+                a[i] /= x;
+            }
+            val[i] = 1;
+            for (auto it:temp) {
+                if (it.second % 2) {
+                    val[i] *= it.first;
+                }
+            }
+        }
+        map<ll, ll> m;
+        ll ans = 1;
+        for (i = 0; i < n; i++) {
+            if (m[val[i]]) {
+                m.clear();
+                ans++;
+            }
+            m[val[i]]++;
+        }
+        cout << ans << "\n";
+    }
+    return 0;
+}
+
