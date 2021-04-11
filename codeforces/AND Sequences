@@ -1,5 +1,5 @@
 Question Link:
-https://codeforces.com/problemset/problem/1087/C
+https://codeforces.com/contest/1513/problem/B
 
 Code:
 #include<bits/stdc++.h>
@@ -35,53 +35,29 @@ using namespace std;
 
 int main() {
     NeedForSpeed;
-//    T_ {
-    ll i;
-    vector<pair<ll, ll>> v(3), v1(3);
-    for (i = 0; i < 3; i++) {
-        cin >> v[i].ff >> v[i].ss;
-        v1[i].ff = v[i].ss;
-        v1[i].ss = v[i].ff;
-    }
-    sort(all(v));
-    sort(all(v1));
-    ll x = v[1].ff;
-    ll y = v1[1].ff;
-    set<pair<ll,ll>>s;
-    for (i = 0; i < 3; i++) {
-        ll x1 = v[i].ff, y1 = v[i].ss;
-        if (x1 <= x) {
-            while (x1 <= x) {
-//                cout << "a ";
-                s.insert({x1,y1});
-                x1++;
+    T_ {
+        ll n, i;
+        cin >> n;
+        map<ll, ll> m;
+        ll x;
+        ll mn = 0;
+        for (i = 0; i < n; i++) {
+            cin >> x;
+            if (i == 0) {
+                mn = x;
             }
-            x1--;
-        } else {
-            while (x1 >= x) {
-//                cout << "b ";
-                s.insert({x1,y1});
-                x1--;
-            }
-            x1++;
+            m[x]++;
+            mn = mn & x;
         }
-        if (y1 <= y) {
-            while (y1 <= y) {
-                s.insert({x1,y1});
-                y1++;
-            }
-        } else {
-            while (y1 >= y) {
-                s.insert({x1,y1});
-                y1--;
-            }
+        if (m[mn] < 2) {
+            cout << "0\n";
+            continue;
         }
+        ll ans = (m[mn] * (m[mn] - 1)) % mod;
+        for (i = 1; i <= n - 2; i++) {
+            ans = (ans * i) % mod;
+        }
+        cout << ans << "\n";
     }
-    cout << s.size() << "\n";
-    for(auto it:s){
-        cout << it.ff << " " << it.ss << "\n";
-    }
-//    }
     return 0;
 }
-
