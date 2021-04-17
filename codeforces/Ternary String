@@ -1,0 +1,71 @@
+Question Link:
+https://codeforces.com/contest/1354/problem/B
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define fr(i, a, b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL);cout.tie(0)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+int main() {
+    NeedForSpeed;
+    T_ {
+        string s;
+        cin >> s;
+        ll i;
+        map<char, ll> m;
+        ll j = 0;
+        ll mn = s.length() + 1;
+        for (i = 0; i < s.length(); i++) {
+            m[s[i]]++;
+            if (m.size() == 3) {
+                while (j < i) {
+                    if (m[s[j]] == 1) {
+                        m[s[j]] = 0;
+                        m.erase(s[j]);
+                        mn = min(mn, i - j);
+                        j++;
+                        break;
+                    }
+                    m[s[j]]--;
+                    j++;
+                }
+            }
+        }
+        if (mn == s.length() + 1) {
+            cout << "0\n";
+            continue;
+        }
+        cout << mn + 1 << "\n";
+
+    }
+    return 0;
+}
+
+ 
