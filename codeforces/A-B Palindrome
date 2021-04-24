@@ -1,0 +1,114 @@
+Question Link:
+https://codeforces.com/contest/1512/problem/C
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define fr(i, a, b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL);cout.tie(0)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define pi 3.14159265358979
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+int main() {
+    NeedForSpeed;
+    T_ {
+        ll a, n, b;
+        string s;
+        cin >> a >> b >> s;
+        n = s.length();
+        ll l = 0, r = n - 1;
+        ll f = 1;
+        while (l < r) {
+            if (s[l] == '?' && s[r] != '?') {
+                s[l] = s[r];
+            }
+            if (s[l] != '?' && s[r] == '?') {
+                s[r] = s[l];
+            }
+            if (s[l] != '?') {
+                if (s[l] == '0')a -= 2;
+                else b -= 2;
+            }
+            if (a < 0 || b < 0 || s[l] != s[r]) {
+                f = 0;
+                cout << "-1\n";
+                break;
+            }
+            l++;
+            r--;
+        }
+        if (!f) {
+            continue;
+        }
+        l = 0, r = n - 1;
+        while (l < r) {
+            if (s[l] == '?') {
+                if (a > 1) {
+                    s[l] = '0';
+                    s[r] = '0';
+                    a -= 2;
+                } else if (b > 1) {
+                    s[l] = '1';
+                    s[r] = '1';
+                    b -= 2;
+                } else {
+                    f = 0;
+                    cout << "-1\n";
+                    break;
+                }
+            }
+            l++;
+            r--;
+        }
+//        cout << a << " " << b << "\n";
+        if (l == r && s[l] == '?') {
+            if (a > 0) {
+                s[l] = '0';
+                a--;
+            } else if (b > 0) {
+                s[l] = '1';
+                b--;
+            } else {
+                cout << "-1\n";
+                continue;
+            }
+        } else if (l == r) {
+            if (s[l] == '0')a--;
+            else b--;
+        }
+        if (!f) {
+            continue;
+        } else if (a == 0 && b == 0) {
+            cout << s << "\n";
+        } else {
+            cout << "-1\n";
+        }
+    }
+    return 0;
+}
+ 
