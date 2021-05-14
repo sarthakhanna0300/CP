@@ -1,0 +1,79 @@
+Question Link:
+https://codeforces.com/contest/1132/problem/C
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+//#define lb lower_bound
+#define ub upper_bound
+#define vi vector<ll>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+vector<pair<ll, ll>> v;
+ll f[5002];
+ll pre1[5002], pre2[5002];
+int calc(int a,int b) {
+    int la = v[a].ff, lb = v[b].ff, ra = v[a].ss, rb = v[b].ss;
+    if (ra < lb || rb < la) {
+        return pre1[ra] - pre1[la - 1] + pre1[rb] - pre1[lb - 1];
+    }
+    la = min(v[a].ff, v[b].ff);
+    lb = max(v[a].ff, v[b].ff);
+    ra = min(v[a].ss, v[b].ss);
+    rb = max(v[a].ss, v[b].ss);
+    return pre1[rb] - pre1[la - 1] + pre2[ra] - pre2[lb - 1];
+}
+int main() {
+    NeedForSpeed;
+//    T_ {
+    ll n, q, i, j;
+    cin >> n >> q;
+    ll cnt = 0;
+    v.resize(q);
+    memset(pre2, 0, sizeof(pre2));
+    memset(pre1, 0, sizeof(pre1));
+    memset(f, 0, sizeof(f));
+    for (i = 0; i < q; i++) {
+        cin >> v[i].ff >> v[i].ss;
+        f[v[i].ff]++;
+        f[v[i].ss + 1]--;
+    }
+    for (i = 1; i <= n; i++) {
+        f[i] = f[i] + f[i - 1];
+        pre1[i] = pre1[i - 1];
+        pre2[i] = pre2[i - 1];
+        if (f[i] == 2)pre2[i]++;
+        if (f[i] == 1)pre1[i]++;
+        if (f[i])cnt++;
+    }
+    ll mx = 0;
+    for (i = 0; i < q; i++) {
+        ll temp;
+        for (j = i + 1; j < q; j++) {
+            mx = max(mx, cnt - calc(i, j));
+        }
+    }
+    cout << mx;
+//    }
+    return 0;
+}
