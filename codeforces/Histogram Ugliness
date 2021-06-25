@@ -1,0 +1,73 @@
+Question Link:
+https://codeforces.com/contest/1534/problem/B
+
+Code:
+#include<bits/stdc++.h>
+#define f(i,a,b) for(i=a;i<b;i++)
+#define f_(i,a,b) for(i=a;i>=b;i--)
+#define fr(i, a, b) for(i=a;i>=b;i--)
+#define T_ ll t; cin>>t; while(t--)
+#define NeedForSpeed ios_base::sync_with_stdio(false); cin.tie(NULL);cout.tie(0)
+#define pb push_back
+#define mod 1000000007
+#define mp make_pair
+#define pi 3.14159265358979
+#define read(a,n) for(i=0;i<n;i++) cin>>a[i]
+#define pr(a,n)  for(i=0;i<n;i++) cout<<a[i] << " "; cout<<"\n"
+#define ff first
+#define ss second
+#define iof freopen("input.txt", "r", stdin);freopen("output.txt", "w", stdout);
+#define sp << " " <<
+#define nl << "\n"
+#define all(s) s.begin(),s.end()
+#define minv(a) *min_element(all(a))
+#define maxv(a) *max_element(all(a))
+#define sumv(a) accumulate(all(a),0)
+#define lb lower_bound //lower_bound returns an iterator pointing to the first element in the range [first,last) which has a value not less than ‘val’.
+#define ub upper_bound //upper_bound returns an iterator pointing to the first element in the range [first,last) which has a value greater than ‘val’.
+#define vi vector<ll>
+#define iii = tuple<int, int, ll>
+#define vvi = vector<vi>
+#define viii = vector<iii>
+#define setpre(a) cout << setprecision(a) << fixed
+
+typedef long long ll ; typedef long double ld;
+using namespace std;
+
+int main() {
+    NeedForSpeed;
+    T_ {
+        ll n;
+        cin >> n;
+        ll arr[n + 2];
+        for (int i = 1; i < n + 1; i++) {
+            cin >> arr[i];
+        }
+        arr[0] = 0;
+        arr[n + 1] = 0;
+        if (n == 1) {
+            cout << arr[1] << "\n";
+        } else if (n == 2) {
+            ll sum = min(arr[1], arr[2]) * 2 + abs(arr[1] - arr[2]);
+            cout << sum << "\n";
+        } else {
+            ll temp = 0;
+            for (int i = 1; i < n + 1; i++) {
+                if (arr[i] > max(arr[i - 1], arr[i + 1])) {
+                    temp += arr[i] - max(arr[i - 1], arr[i + 1]);
+                    arr[i] = max(arr[i - 1], arr[i + 1]);
+                }
+            }
+            ll sum = 0;
+            sum += arr[1];
+            sum += arr[n];
+            for (int i = 2; i < n + 1; i++) {
+                sum += abs(arr[i] - arr[i - 1]);
+            }
+            cout << sum + temp << "\n";
+        }
+    }
+    return 0;
+}
+
+
